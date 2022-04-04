@@ -10,7 +10,7 @@ function calcular_potencia()
    return potencia
 }
 
-function dar_resultado()
+function dar_resultado() 
 {
     const respuesta = calcular_potencia()
     alert(respuesta)

@@ -13,7 +13,7 @@ const calcular_raices =(ValorA,ValorB,ValorC) => {
     const resultado1 = res_mas / (2 * ValorA)
     const resultado2 = res_menos / (2 * ValorA)
 
-    return 'resultado 1= '+resultado1+'resultado 2= '+resultado2
+    return 'resultado 1= '+resultado1+' resultado 2= '+resultado2
 }
 
 const mostrar_resultado =() => {

@@ -40,7 +40,7 @@ console.log(`
 `)
 
 //elimino los elementos continuos a Seat
-//marco el start con el indice antes buscado de Seat y elimino los 5 elementos.
+//marco el start con el indice antes buscado de Seat y elimino 5 elementos,contando al mismo, hacia la derecha.
 Marcas.splice(index,5)
 console.log(Marcas)
 

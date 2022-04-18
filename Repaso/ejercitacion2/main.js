@@ -1,13 +1,8 @@
 const triangulo = (anguloa,angulob,anguloc) => {
 
     const calculo = anguloa+angulob+anguloc
-    if(calculo==180){
-        var respuesta = "Su triangulo suma 180 grados, es valido"
-        return respuesta
-    }else{
-         respuesta = "Su triangulo no es valido"
-       return respuesta
-    }
+    var respuesta= (calculo ==180) ? 'Su triangulo es valido ':'Su triangulo no es valido'
+    return respuesta
     
 }
 

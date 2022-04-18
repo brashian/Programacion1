@@ -44,7 +44,7 @@ console.log(`
 Marcas.splice(index,5)
 console.log(Marcas)
 
-
+    
 //copia y variantes con original
 
 Marcas.push("Porsche")

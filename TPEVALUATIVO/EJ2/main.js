@@ -16,9 +16,11 @@ parte de la primera. Y mostrarla posteriormente en un H1. */
 const retornar_frases = (grados) => {
     //creo un if para ver en que parte se encuentran los grados
     if(grados  >=14 & grados <32){
+        //creo variable respuesta para retornarla con el valor correspondiente
         var respuesta  = "Temperatura baja"
     }else{
         if(grados >=32 & grados < 68){
+            //sobrepongo los valores, al ser otros los terminos
             respuesta  = "Temperatura adecuada"
         }else{
             if(grados >=68 & grados <=96){

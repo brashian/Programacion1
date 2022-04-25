@@ -18,8 +18,9 @@ function Teorema (CatetoA,CatetoB){
     
     //En la constante Hip 
     const Hip = Math.sqrt(Math.pow(CatetoA,2) + Math.pow(CatetoB,2))
-   const resultado = `Su Hipotenusa es ${Hip}`
-   return resultado
+    //creo un una respuesta que no varia y la retorno
+     const resultado = `Su Hipotenusa es ${Hip}`
+    return resultado
 }
 
 function resultado() {
@@ -31,7 +32,7 @@ function resultado() {
     const respuesta = Teorema(CatetoA,CatetoB)
 
 
-
+    //muestro la respuesta en un h4
     document.getElementById("h4_respuesta").textContent = respuesta
 
 }

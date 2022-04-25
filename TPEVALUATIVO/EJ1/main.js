@@ -44,6 +44,6 @@ function calculos () {
     }
     
 }
-
+//creo la escucha hacia el boton, para cuando se clicke se dispare la function calculos
 const boton = document.getElementById("btn_mostrar")
 boton.addEventListener("click",calculos)

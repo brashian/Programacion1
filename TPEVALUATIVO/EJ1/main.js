@@ -18,9 +18,9 @@ function calculos () {
     
     if(marca=="FK"){
         //creo una variable que me calcule el porcentaje, solo en esta parte
-        let porcentaje = 175000 * 0.15
+        let porcentaje = 1750000 * 0.15
         //creo variable resultado, para usarla luegp
-        const respuesta = 175000 - porcentaje
+        const respuesta = 1750000 - porcentaje
         //modifico el h1 desde Js. Mostarndo asi el descuento del FK
         document.getElementById("h1_resultado").textContent = `su precio con descuento es: ${respuesta} de su auto Ford KA`
     

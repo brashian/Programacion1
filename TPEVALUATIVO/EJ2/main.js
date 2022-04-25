@@ -15,15 +15,15 @@ parte de la primera. Y mostrarla posteriormente en un H1. */
 // creo funcion flecha para analizar y retornar los datos que provienen de mostrar_resultado
 const retornar_frases = (grados) => {
     //creo un if para ver en que parte se encuentran los grados
-    if(grados  >=14 & grados <32){
+    if(grados  >=14 && grados <32){
         //creo variable respuesta para retornarla con el valor correspondiente
         var respuesta  = "Temperatura baja"
     }else{
-        if(grados >=32 & grados < 68){
+        if(grados >=32 && grados < 68){
             //sobrepongo los valores, al ser otros los terminos
             respuesta  = "Temperatura adecuada"
         }else{
-            if(grados >=68 & grados <=96){
+            if(grados >=68 && grados <=96){
                 respuesta  = "Temperatura alta"
             }else{
                 respuesta  = "Temperatura desconocida"

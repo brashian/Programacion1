@@ -1,10 +1,4 @@
-/*1. Crear una función que imprima en un párrafo lo siguiente:
-a) La longitud del arreglo
-b) El ultimo elemento del arreglo
-c) El tercer elemento del arreglo
-2. Crear una función que recorra el arreglo y lo imprima en un console.log(). Hacer uso de
-forEach para dicho recorrido.
- */
+
 var lenguajes = ["Python","JavaScript","Csharp","C++","Java","PHP","Ruby"]
 
 
@@ -24,7 +18,12 @@ console.log(`Se agrega un elemento al inicio del array ${lenguajes}`)
 let index=lenguajes.indexOf("Java")
 lenguajes.splice(index,2)
 console.log(`Se eliminan Java Y PHP con index y el uso de splice = ${lenguajes}`)
+/*1. Crear una función que imprima en un párrafo lo siguiente:
+a) La longitud del arreglo
+b) El ultimo elemento del arreglo
+c) El tercer elemento del arreglo
 
+ */
 const arreglo = () =>{
     let final = lenguajes [lenguajes.length-1]
     let index=lenguajes.indexOf("Csharp")
@@ -37,7 +36,8 @@ const arreglo = () =>{
 }
 const boton = document.getElementById('btn_mostrar')
 boton.addEventListener("click", arreglo)
-
+/*2. Crear una función que recorra el arreglo y lo imprima en un console.log(). Hacer uso de
+forEach para dicho recorrido.*/
 const recorrer = () =>{
 
     lenguajes.forEach( (element) => {

@@ -17,7 +17,7 @@ const datos = () => {
     let numeros = [5, 2, 88, 14, 22, 7, 6, 42, 47, 34]
 
     const respuesta = arreglo(numeros)
-    alert (respuesta)
+    console.log(respuesta)
 
 }
 const boton = document.getElementById("btn_mostrar")
@@ -60,3 +60,17 @@ const promedio_arreglo = () => {
 }
 
 boton.addEventListener('click', promedio_arreglo)
+
+const posiciones = () => {
+    let numeros = [5, 2, 88, 14, 22, 7, 6, 42, 47, 34]
+    const pos1 = document.getElementById('inp_elementoa').value
+    const pos2 = document.getElementById('inp_elementob').value
+
+    const eliminar = numeros.splice(pos1,1)[0];
+    const eliminar2= numeros.splice(pos2,1)[0]
+
+    numeros.splice(pos2,0,eliminar)
+    numeros.splice(pos1,0,eliminar2)
+    document.getElementById('h2_swap').textContent= `sus cambios fueron hechos ${numeros}`
+}
+boton.addEventListener('click', posiciones)

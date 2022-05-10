@@ -66,10 +66,9 @@ const posiciones = () => {
     const pos1 = document.getElementById('inp_elementoa').value
     const pos2 = document.getElementById('inp_elementob').value
 
-    const eliminar = numeros.splice(pos1,1)[0];
     const eliminar2= numeros.splice(pos2,1)[0]
 
-    numeros.splice(pos2,0,eliminar)
+    
     numeros.splice(pos1,0,eliminar2)
     document.getElementById('h2_swap').textContent= `sus cambios fueron hechos ${numeros}`
 }

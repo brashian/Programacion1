@@ -11,7 +11,7 @@ const consumir_datos = async() =>{
         contador= contador+1
         let fila = `<tr>
                         <th>${contador}</th>
-                        <td>${usuarios.name}</td>
+                        <td >${usuarios.name}</td>
                         <td>${usuarios.email}</td>
                         <td>${usuarios.website}</td>
                     </tr>`

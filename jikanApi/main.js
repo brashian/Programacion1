@@ -10,8 +10,8 @@ const catalogo_anime = async() => {
     anime_data.forEach(anime => {
         
     let card = `
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
+    <div class="col-md-4">
+        <div class="card m-1" style="width: 18rem;">
             <img src="${anime.images.webp.large_image_url}" class="card-img-top">
             <div class="card-body">
                 <p class="card-text">${anime.title}</p>

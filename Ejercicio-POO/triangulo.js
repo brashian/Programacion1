@@ -7,15 +7,11 @@ export default class Triangulo {
 
     calculo_triangulo(){
 
-        let triangulo = (this.altura * this.base) /2
+        let triangulo = `Area triangulo ${(this.altura * this.base) /2}`
 
         
-        console.log(`
-            Area del triangulo: ${triangulo}
-        `)
-        document.getElementById('h1_triangulo').textContent= `
-        Area del triangulo: ${triangulo}
-    `
+        
+      return triangulo
 
         
     }

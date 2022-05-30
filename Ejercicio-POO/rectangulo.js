@@ -8,13 +8,11 @@ export default class Rectangulo{
 
     area_rectangulo(){
 
-        let rectangulo = this.altura * this.base
-        console.log(`
-            Area de su rectangulo = ${rectangulo}
-        `)
-        document.getElementById('h1_rectangulo').textContent= `
-        Area del rectangulo: ${rectangulo}
-    `
+        let rectangulo = `Area rectangolo: ${this.altura * this.base}`
+        
+
+        return rectangulo
+    
     }
 
 

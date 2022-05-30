@@ -1,6 +1,6 @@
 export default class Triangulo {
 
-    constructor(A,B){
+    constructor(A,B,){
         this.altura = A
         this.base = B
     }
@@ -9,9 +9,15 @@ export default class Triangulo {
 
         let triangulo = (this.altura * this.base) /2
 
+        
         console.log(`
             Area del triangulo: ${triangulo}
         `)
+        document.getElementById('h1_triangulo').textContent= `
+        Area del triangulo: ${triangulo}
+    `
+
+        
     }
 
 

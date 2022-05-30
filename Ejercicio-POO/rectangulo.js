@@ -12,6 +12,9 @@ export default class Rectangulo{
         console.log(`
             Area de su rectangulo = ${rectangulo}
         `)
+        document.getElementById('h1_rectangulo').textContent= `
+        Area del rectangulo: ${rectangulo}
+    `
     }
 
 

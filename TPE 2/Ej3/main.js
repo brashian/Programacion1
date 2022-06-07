@@ -9,8 +9,10 @@ const framework = {
 }
 
 const mostrar = () => {
+    //se hacen constante para titulo,nombre,etc con destructuring object
     const {titulo, nombre} = framework
     const { lenguaje, patron, spa} = framework.características;
+    //se hace uso de lo anterior imprimiendo los datos en un parrafo
 document.getElementById('parrafo').innerHTML=`
     Titulo: ${titulo}
     <br>

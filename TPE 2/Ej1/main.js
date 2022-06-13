@@ -16,7 +16,7 @@ const dolar = async () => {
         //se muestra indice y otras caracteristicas del json
         let col = `
         <tr class="table-light">
-            <td class="table-dark">${index}</td>
+            <td class="table-dark">${index+1}</td>
             <td>${element.casa.nombre}</td>
             <td>${element.casa.agencia}</td>
             <td>${element.casa.venta}</td>

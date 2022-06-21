@@ -49,7 +49,8 @@ export default class Cliente {
                 <td>${element.apellido}</td>
                 <td>${element.dni}</td>
                 <td>
-                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#mymodal"><i class="fa fa-trash"></i></button>
+                    <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></button>
+                    <button onclick="editar(${index})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                 </td>
             </tr>
             `
@@ -66,9 +67,23 @@ export default class Cliente {
 
         lista_clientes.splice(index,1)
         //se vuelve a guarda la tabla
-        localStorage.getItem("listado_cliente", JSON.stringify(lista_clientes))
+        localStorage.setItem("listado_cliente", JSON.stringify(lista_clientes))
         //se refresca la tabla
+        this.obtener_cliente()
+    }
+
+    actualizar_cliente (index){
+        //se busca el listado de cliente en el LS
+        let listado_clientes = JSON.parse(localStorage.getItem("listado_cliente"))
+        //se modifica a cierto cliente(index)
+        listado_clientes(index).nombre = document.getElementById("inp_nombre").value
+        listado_clientes(index).apellido = document.getElementById("inp_apellido").value
+        listado_clientes(index).dni = document.getElementById("inp_dni").value
+        //se guarda
+        localStorage.setItem("listado_cliente", JSON.stringify(listado_clientes))
+        //se refresca la tabla llamando al metodo obtener cliente
         this.obtener_cliente()
     }
 }
 
+ 

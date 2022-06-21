@@ -19,9 +19,16 @@ function listar (){
 listar()
 
 function eliminar (){
-
+    let indice = localStorage.getItem("indice")
     const cliente = new Cliente()
-    cliente.eliminar_cliente()
+    cliente.eliminar_cliente(indice)
    
 }
 document.getElementById("btn_eliminar").addEventListener("click",eliminar)
+
+function actualizar () {
+    let indice = localStorage.getItem("indice_update")
+
+    let cliente = new Cliente
+    cliente.actualizar_cliente(indice)
+}

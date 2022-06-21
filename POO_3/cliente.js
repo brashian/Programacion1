@@ -49,7 +49,7 @@ export default class Cliente {
                 <td>${element.apellido}</td>
                 <td>${element.dni}</td>
                 <td>
-                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#mymodal"><i class="fa fa-trash"></i></button>
                 </td>
             </tr>
             `

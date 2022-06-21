@@ -17,3 +17,11 @@ function listar (){
     cliente.obtener_cliente()
 }
 listar()
+
+function eliminar (){
+
+    const cliente = new Cliente()
+    cliente.eliminar_cliente()
+   
+}
+document.getElementById("btn_eliminar").addEventListener("click",eliminar)

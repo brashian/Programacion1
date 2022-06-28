@@ -34,6 +34,8 @@ export default class Cliente {
         }
         //se invoca el metodo obtener_cliente
         this.obtener_cliente()
+        this.vaciar_formulario()
+       
     }
 
     obtener_cliente(){
@@ -76,13 +78,26 @@ export default class Cliente {
         //se busca el listado de cliente en el LS
         let listado_clientes = JSON.parse(localStorage.getItem("listado_cliente"))
         //se modifica a cierto cliente(index)
-        listado_clientes(index).nombre = document.getElementById("inp_nombre").value
-        listado_clientes(index).apellido = document.getElementById("inp_apellido").value
-        listado_clientes(index).dni = document.getElementById("inp_dni").value
+        listado_clientes[index].nombre = document.getElementById("inp_nombre").value
+        listado_clientes[index].apellido = document.getElementById("inp_apellido").value
+        listado_clientes[index].dni = document.getElementById("inp_dni").value
         //se guarda
         localStorage.setItem("listado_cliente", JSON.stringify(listado_clientes))
         //se refresca la tabla llamando al metodo obtener cliente
         this.obtener_cliente()
+
+        //se apaga el voton actualizar
+        document.getElementById("btn_actualizar").style.display = "none"
+        //se enciende el boton guardar
+        document.getElementById("btn_guardar").style.display = "block"
+        //vacio inputs
+        this.vaciar_formulario()
+    }
+
+    vaciar_formulario (){
+        document.getElementById("form_cliente").reset()
+
+
     }
 }
 

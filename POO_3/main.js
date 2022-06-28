@@ -13,7 +13,7 @@ function guardar (){
 document.getElementById("btn_guardar").addEventListener("click",guardar)
 
 function listar (){
-    let cliente = new Cliente
+    let cliente = new Cliente()
     cliente.obtener_cliente()
 }
 listar()
@@ -29,6 +29,9 @@ document.getElementById("btn_eliminar").addEventListener("click",eliminar)
 function actualizar () {
     let indice = localStorage.getItem("indice_update")
 
-    let cliente = new Cliente
+    let cliente = new Cliente()
     cliente.actualizar_cliente(indice)
+
+  
 }
+document.getElementById("btn_actualizar").addEventListener("click",actualizar)

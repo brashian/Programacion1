@@ -17,3 +17,17 @@ const mostrar_tabla = ( ) =>{
     product.tabla_producto()
 }
 mostrar_tabla()
+
+const eliminar = () =>{
+    let indice = localStorage.getItem("indice")
+    const product = new Producto
+    product.eliminar_producto(indice)
+}
+document.getElementById("btn_eliminar").addEventListener("click",eliminar)
+
+const actualizacion_datos = () =>{
+    let indice_update = localStorage.getItem("indice_update")
+    const product = new Producto
+    product.actualizar_producto(indice_update)
+}
+document.getElementById("btn_actualizar").addEventListener("click",actualizacion_datos)

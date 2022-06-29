@@ -26,7 +26,7 @@ export default class Producto{
             localStorage.setItem("lista_productos",JSON.stringify(productos))
         }
         this.tabla_producto()
-       
+        this.vaciar()
     }
 
     tabla_producto(){
@@ -37,11 +37,11 @@ export default class Producto{
             <td class="fw-bold">${index}</td>
             <td class="fw-semibold">${element.nombre}</td>
             <td class="fw-semibold">$${element.precio}</td>
-            <td><img src="${element.imagen}" style="width: 6rem; class="img-thumbnail"></td>
+            <td><img src="${element.imagen}" style="width: 8rem; class="img-thumbnail"></td>
             <td class="fw-semibold">${element.detalle}</td>
             <td>
-                <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></button>
-                <button onclick="editar(${index})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+                <button onclick="indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></button>
+                <button onclick="actualizar(${index})" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
             </td>
         </tr>
         `
@@ -51,7 +51,32 @@ export default class Producto{
         document.getElementById("tbody").innerHTML = fila_producto.join('')
     }
 
+    eliminar_producto(index){
+        let productos = JSON.parse(localStorage.getItem("lista_productos"))
+        productos.splice(index,1)
 
+        localStorage.setItem("lista_productos", JSON.stringify(productos))
+        this.tabla_producto()
+    }
 
+    actualizar_producto(index){
+        let productos = JSON.parse(localStorage.getItem("lista_productos"))
+        productos[index].nombre = document.getElementById("inp_nombre").value
+        productos[index].precio = document.getElementById("inp_precio").value
+        productos[index].imagen = document.getElementById("inp_imagen").value
+        productos[index].detalle = document.getElementById("inp_detalle").value
+        
+        localStorage.setItem("lista_productos", JSON.stringify(productos))
+        this.tabla_producto()
 
+        document.getElementById("btn_actualizar").style.display = "none"
+        document.getElementById("btn_guardar").style.display = "block"
+        this.vaciar()
+    }
+
+    vaciar(){
+        document.getElementById("form_cliente").reset()
+    }
+
+    
 }

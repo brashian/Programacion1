@@ -19,37 +19,39 @@
           
           </nav>
     </header>
-    <div class="container mt-3">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <form id="form_cliente">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="inp_nombre">
+                    <div class="mb-3 input-group flex-nowrap">
+                        <span class="input-group-text" id="inp_nombre"><i class="fa fa-address-book-o" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" id="inp_nombre" placeholder="Nombre">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="" class="form-label">Precio</label>
-                        <input type  ="number" class="form-control" id="inp_precio">
+                    <div class="mb-3 input-group flex-nowrap">
+                        <span class="input-group-text" id="inp_precio"><i class="fa fa-money"></i></span>
+                        <input type  ="number" class="form-control" id="inp_precio" placeholder="Precio">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="" class="form-label">imagen</label>
-                        <input type="text" class="form-control" id="inp_imagen">
+                    <div class="mb-3 input-group flex-nowrap">
+                        <span class="input-group-text" id="inp_imagen"><i class="fa fa-picture-o"></i></span>
+                        <input type="text" class="form-control" id="inp_imagen" placeholder="Url de la imagen">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="" class="form-label">Detalle</label>
-                        <input type  ="text" class="form-control" id="inp_detalle">
+                    <div class="mb-3 input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"><i class="fa fa-info" ></i></span>
+                        <input type  ="text" class="form-control" id="inp_detalle" placeholder="Detalle">
                     </div>
+                    
               </form>
-                <button class="btn btn-success" id="btn_guardar">Guardar</button>
-                <button style="display: none" class="btn btn-success" id="btn_actualizar">Actualizar</button>
+              <button class="btn btn-success" id="btn_guardar">Guardar</button>
+              <button style="display: none" class="btn btn-success" id="btn_actualizar">Actualizar</button>
 
             </div>
-            <div class="col-md-8">
-                <table class="table p-3">
-                    <thead>
+            
+            <div class="col-md-9">
+                <table class="table p-3 table-dark">
+                    <thead class="text-center fs-4">
                         <tr>
                             <th>Nª</th>
                             <th>Nombre</th>
@@ -64,34 +66,35 @@
                     </tbody>
                 </table>
 
+                <div class="modal fade" id="mymodal" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Eliminacion</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Esta seguro de eliminar el producto?</p>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-danger" id="btn_eliminar">SI</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 
 
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="mymodal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Eliminacion</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Esta seguro de eliminar esta fila?</p>
-          </div>
-          <div class="modal-footer ">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-danger" id="btn_eliminar">Eliminar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     
 
     <!--Se lo declara como modulo para que tenga la capacidad de importar-->
     <script src="main.js" type="module"></script>
-    <script src="auxiliares.js"></script>
+    <script src="auxiliar.js"></script>
     <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>

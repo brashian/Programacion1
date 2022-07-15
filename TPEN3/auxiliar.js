@@ -2,11 +2,7 @@ function indice(index){
     localStorage.setItem("indice",index)
 }
 
-function indice_pedido(index){
-    localStorage.setItem("indice_pedido",index)
 
-  
-}
 
 function actualizar (index){
     let productos = JSON.parse(localStorage.getItem("lista_productos"))

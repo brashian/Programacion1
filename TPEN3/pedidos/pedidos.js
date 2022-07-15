@@ -1,5 +1,5 @@
 export default class Pedidos{
-    contador;
+    contador = 0
     constructor(){}
 
 
@@ -18,7 +18,7 @@ export default class Pedidos{
         <div class="card-body">
           <h5 class="card-title">${element.nombre}</h5>
           <p class="card-text">${element.detalle}</p>
-          <button onclick="indice_pedido(${index})" class="btn btn-primary" id="btn_agregar">Agregar</button>
+          <button onclick="indice_pedido(${index})"  data-bs-toggle="modal" data-bs-target="#modal_pedido" class="btn btn-primary" >Agregar</button>
           
 
 
@@ -32,31 +32,51 @@ export default class Pedidos{
     
         document.getElementById('tarjetas').innerHTML= tarjetas.join('')
     }
-
-   tabla_pedidos(index){
-    let pedido = JSON.parse(localStorage.getItem("lista_productos")) 
-    let fila_pedido = {
-        nombre: pedido[index].nombre,
-        cantindad: this.contador,
-        precio: pedido[index].precio
-    }
     
-    if("lista_pedidos" in localStorage){
-        let pedidos = JSON.parse(localStorage.getItem("lista_pedidos"))
-        productos.push(fila_pedido)
-        localStorage.setItem("lista_pedidos",JSON.stringify(pedidos))
+    agregar_pedido(index){
+        let pedido = JSON.parse(localStorage.getItem("lista_productos")) 
+        
 
-    }else{
-        let pedidos = []
-        productos.push(fila_pedido)
-        localStorage.setItem("lista_pedidos",JSON.stringify(pedidos))
+        let fila_pedido = {
+            nombre: pedido[index].nombre,
+            cantindad: this.contador,
+            precio: pedido[index].precio
+        }
+
+        
+        
+        if("lista_pedidos" in localStorage){
+            let pedidos = JSON.parse(localStorage.getItem("lista_pedidos"))
+            pedidos.push(fila_pedido)
+            localStorage.setItem("lista_pedidos",JSON.stringify(pedidos))
+    
+        }else{
+            let pedidos = []
+            pedidos.push(fila_pedido)
+            localStorage.setItem("lista_pedidos",JSON.stringify(pedidos))
+        }
+
+       
+        this.tabla_pedidos()
     }
 
+   tabla_pedidos(){
+    let pedidos = JSON.parse(localStorage.getItem("lista_pedidos")) 
+    let fila_pedido = []
+    pedidos.forEach((element) => {
+        let elemento_pedido=`
+        <tr>
+        
+        <td class="fw-semibold">${element.nombre}</td>
+        <td class="fw-semibold">$${element.cantidad}</td>
+        <td class="fw-semibold">${element.precio}</td>
+        
+         </tr>
+    `
+    fila_pedido.push(elemento_pedido)
+    });
     
-   }
-
-   encargos(){
-
+    document.getElementById("tbody").innerHTML = fila_pedido.join('')
 
    }
 }

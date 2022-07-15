@@ -9,9 +9,9 @@ mostrar_tarjetas()
 
 const mostrar_tabla = () => {
     let indice = localStorage.getItem("indice_pedido")
-    const pedido = new Pedidos
-    pedido.tabla_pedidos(indice)
-    
+    const pedido = new Pedidos()
+    pedido.agregar_pedido(indice)
+   
 }
 document.getElementById("btn_agregar").addEventListener("click",mostrar_tabla)
 

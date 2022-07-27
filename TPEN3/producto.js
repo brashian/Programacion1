@@ -1,6 +1,7 @@
 export default class Producto{
     constructor(nombre,precio,imagen,detalle){
         this.nombre = nombre
+        this.cantidad = 1
         this.precio = precio
         this.imagen = imagen
         this.detalle= detalle
@@ -9,6 +10,7 @@ export default class Producto{
     guardar_producto(){
         let new_product = {
             nombre: this.nombre,
+            cantidad: this.cantidad,
             precio: this.precio,
             imagen: this.imagen,
             detalle: this.detalle

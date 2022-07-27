@@ -1,3 +1,4 @@
+import Cliente from "../../POO_3/cliente.js"
 import Pedidos from "./pedidos.js"
 
 const mostrar_tarjetas = ( ) =>{
@@ -15,3 +16,10 @@ const mostrar_tabla = () => {
 }
 document.getElementById("btn_agregar").addEventListener("click",mostrar_tabla)
 
+const finalizar = () =>{
+ let cliente = document.getElementById("inp_cliente").value
+const pedido = new Pedidos(cliente)
+pedido.finalizar_pedido()
+
+}
+document.getElementById("btn_finalizar").addEventListener("click",finalizar)

@@ -1,6 +1,7 @@
 export default class Pedidos{
     
     constructor(cliente){
+        this.cantidad = 1
         this.contador = 0
         this.total = 0
         this.cliente = cliente
@@ -47,7 +48,7 @@ export default class Pedidos{
 
         let fila_pedido = {
             nombre: pedido[index].nombre,
-            cantidad:pedido.cantidad,
+            cantidad: this.cantidad,
             precio: pedido[index].precio
         }
 
@@ -63,7 +64,7 @@ export default class Pedidos{
             if(i >= 0){
                 console.log('cantidad: '+pedidos[i].cantidad)
                 
-                pedidos[i].cantidad = pedido[i].cantidad + 1
+                pedidos[i].cantidad = pedidos[i].cantidad + 1
                 pedidos[i].precio = parseInt(pedidos[i].precio) + parseInt(pedido[index].precio)
                 localStorage.setItem("lista_pedidos",JSON.stringify(pedidos)) 
             }else{
@@ -90,11 +91,13 @@ export default class Pedidos{
     let pedidos = JSON.parse(localStorage.getItem("lista_pedidos")) 
     let fila_pedido = []
     pedidos.forEach((element) => {
+
+        
         let elemento_pedido=`
         <tr>
         
         <td class="fw-semibold">${element.nombre}</td>
-        <td class="fw-semibold">$${element.cantidad}</td>
+        <td class="fw-semibold">${element.cantidad}</td>
         <td class="fw-semibold">${element.precio}</td>
         
          </tr>

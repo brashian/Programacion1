@@ -1,4 +1,4 @@
-import Cliente from "../../POO_3/cliente.js"
+
 import Pedidos from "./pedidos.js"
 
 const mostrar_tarjetas = ( ) =>{

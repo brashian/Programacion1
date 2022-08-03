@@ -8,7 +8,13 @@ export default class Ordenes{
     let orden = []
 
     pedidos.forEach((element,index) => {
-
+        let descrcipcion_estado = null
+        if(element.estado == 0)
+        {
+            descrcipcion_estado = `<span class="badge bg-warning">Pendiente</span>`
+        }else{
+            descrcipcion_estado = `<span class="badge bg-success">Entregado</span>`
+        }
 
         let elemento_pedido=`
         <tr>
@@ -16,7 +22,7 @@ export default class Ordenes{
         <td class="fw-semibold">${element.cliente}</td>
         <td class="fw-semibold">${element.fecha}</td>
         <td class="fw-semibold">${element.total}</td>
-        <td class="fw-semibold">${element.estado}</td>
+        <td class="fw-semibold">${descrcipcion_estado}</td>
         <td class="fw-semibold">
         <button onclick="ordenes(${index})" data-bs-toggle="modal" data-bs-target="#modal_ordenes" class="btn btn-secondary btn-md" ><i class="fa fa-edit"></i></button>
         <button onclick="ver_detalle(${index})" data-bs-toggle="modal" data-bs-target="#modal_detalles" class="btn btn-secondary btn-md" ><i class="fa fa-eye"></i></button></td>

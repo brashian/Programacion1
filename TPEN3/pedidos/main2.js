@@ -23,3 +23,4 @@ pedido.finalizar_pedido()
 
 }
 document.getElementById("btn_finalizar").addEventListener("click",finalizar)
+

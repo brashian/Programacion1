@@ -92,7 +92,7 @@ export default class Pedidos{
     let fila_pedido = []
     pedidos.forEach((element) => {
 
-        
+
         let elemento_pedido=`
         <tr>
         
@@ -128,7 +128,7 @@ export default class Pedidos{
         cliente: this.cliente,
         total:this.total,
         estado: 0,
-        detalle: pedido_final
+        detalle: JSON.stringify(pedido_final)
     }
         console.log(nuevo_pedido)
          
@@ -145,6 +145,9 @@ export default class Pedidos{
 
         
         localStorage.removeItem("lista_pedidos")
+        
         console("se borro lista_pedidos")
    }
+
+
 }

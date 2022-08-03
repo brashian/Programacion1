@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand text-center" href="#">Ordenes</a>
+             <div class="m-1">
+                <a href="../pedidos/pedidos.html" class="btn-secondary btn btn-lg">Cargar Pedidos</a>
+                <a href="../index.html" class="btn-secondary btn btn-lg">Cargar Productos</a>
+             </div>
+          </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <table class="table p-3 table-dark">
+                    <thead class="text-center fs-4">
+                        <tr>
+                            <th>cliente</th>
+                            <th>fecha</th>
+                            <th>total</th>
+                            <th>estado</th>
+                            <th>acciones</th>
+                        </tr>
+                    </thead >
+                    <tbody id="table_body" class="text-center fs-5">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<!-- Modal estado-->
+    <div class="modal fade" id="modal_ordenes" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Actualizar estado del pedido</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Finalizo su orden?</p>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-primary" id="btn_actualizar">SI</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--Ver detalle-->
+    
+    <div class="modal fade" id="modal_detalles" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold">Detalles del pedido</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table p-3 table-dark">
+                    <thead class="text-center fs-4">
+                        <tr>
+                            <th>Encargo</th>
+                            <th>Cant</th>
+                            <th>Precio</th>
+
+                        </tr>
+                    </thead >
+                    <tbody id="table_detalle" class="text-center fs-5">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+    
+    <script src="main3.js" type="module"></script>
+    <script src="auxiliar3.js"></script>
+    <script src="../bootstrap.bundle.min.js"></script>
+</body>
+</html>
